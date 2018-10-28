@@ -49,8 +49,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PlutoTests.cs" />
+    <Compile Include="TurningTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ForwardTests.cs" />
+    <Compile Include="OffGridTests.cs" />
+    <Compile Include="ObstacleTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
