@@ -14,21 +14,21 @@ namespace Pluto.Tests
             PlutoRover rover = new PlutoRover(new Position(4, 4, Orientation.N));
             planet.AddObject(rover);
             rover.ProcessCommand(PlutoCommand.L);
-            Assert.Equals(rover.GetPosition(), new Position(4, 4, Orientation.W));
+            Assert.AreEqual(rover.GetPosition(), new Position(4, 4, Orientation.W));
             rover.ProcessCommand(PlutoCommand.L);
-            Assert.Equals(rover.GetPosition(), new Position(4, 4, Orientation.S));
+            Assert.AreEqual(rover.GetPosition(), new Position(4, 4, Orientation.S));
             rover.ProcessCommand(PlutoCommand.L);
-            Assert.Equals(rover.GetPosition(), new Position(4, 4, Orientation.E));
+            Assert.AreEqual(rover.GetPosition(), new Position(4, 4, Orientation.E));
             rover.ProcessCommand(PlutoCommand.L);
-            Assert.Equals(rover.GetPosition(), new Position(4, 4, Orientation.N));
+            Assert.AreEqual(rover.GetPosition(), new Position(4, 4, Orientation.N));
             rover.ProcessCommand(PlutoCommand.R);
-            Assert.Equals(rover.GetPosition(), new Position(4, 4, Orientation.E));
+            Assert.AreEqual(rover.GetPosition(), new Position(4, 4, Orientation.E));
             rover.ProcessCommand(PlutoCommand.R);
-            Assert.Equals(rover.GetPosition(), new Position(4, 4, Orientation.S));
+            Assert.AreEqual(rover.GetPosition(), new Position(4, 4, Orientation.S));
             rover.ProcessCommand(PlutoCommand.R);
-            Assert.Equals(rover.GetPosition(), new Position(4, 4, Orientation.W));
+            Assert.AreEqual(rover.GetPosition(), new Position(4, 4, Orientation.W));
             rover.ProcessCommand(PlutoCommand.R);
-            Assert.Equals(rover.GetPosition(), new Position(4, 4, Orientation.N));
+            Assert.AreEqual(rover.GetPosition(), new Position(4, 4, Orientation.N));
         }
 
         [TestMethod]
@@ -38,9 +38,9 @@ namespace Pluto.Tests
             PlutoRover rover = new PlutoRover(new Position(4, 4, Orientation.N));
             planet.AddObject(rover);
             rover.ProcessCommand(PlutoCommand.F);
-            Assert.Equals(rover.GetPosition(), new Position(4, 5, Orientation.N));
+            Assert.AreEqual(rover.GetPosition(), new Position(4, 5, Orientation.N));
             rover.ProcessCommand(PlutoCommand.B);
-            Assert.Equals(rover.GetPosition(), new Position(4, 4, Orientation.N));
+            Assert.AreEqual(rover.GetPosition(), new Position(4, 4, Orientation.N));
         }
 
         [TestMethod]
@@ -50,9 +50,9 @@ namespace Pluto.Tests
             PlutoRover rover = new PlutoRover(new Position(4, 4, Orientation.E));
             planet.AddObject(rover);
             rover.ProcessCommand(PlutoCommand.F);
-            Assert.Equals(rover.GetPosition(), new Position(5, 4, Orientation.E));
+            Assert.IsTrue(rover.GetPosition() == (new Position(5, 4, Orientation.E)));
             rover.ProcessCommand(PlutoCommand.B);
-            Assert.Equals(rover.GetPosition(), new Position(4, 4, Orientation.E));
+            Assert.IsTrue(rover.GetPosition().Equals( new Position(4, 4, Orientation.E)));
         }
 
         [TestMethod]
@@ -62,9 +62,9 @@ namespace Pluto.Tests
             PlutoRover rover = new PlutoRover(new Position(4, 4, Orientation.S));
             planet.AddObject(rover);
             rover.ProcessCommand(PlutoCommand.F);
-            Assert.Equals(rover.GetPosition(), new Position(4, 3, Orientation.S));
+            Assert.AreEqual(rover.GetPosition(), new Position(4, 3, Orientation.S));
             rover.ProcessCommand(PlutoCommand.B);
-            Assert.Equals(rover.GetPosition(), new Position(4, 4, Orientation.S));
+            Assert.AreEqual(rover.GetPosition(), new Position(4, 4, Orientation.S));
         }
 
         [TestMethod]
@@ -74,9 +74,9 @@ namespace Pluto.Tests
             PlutoRover rover = new PlutoRover(new Position(4, 4, Orientation.W));
             planet.AddObject(rover);
             rover.ProcessCommand(PlutoCommand.F);
-            Assert.Equals(rover.GetPosition(), new Position(3, 4, Orientation.W));
+            Assert.AreEqual(rover.GetPosition(), new Position(3, 4, Orientation.W));
             rover.ProcessCommand(PlutoCommand.B);
-            Assert.Equals(rover.GetPosition(), new Position(4, 4, Orientation.W));
+            Assert.AreEqual(rover.GetPosition(), new Position(4, 4, Orientation.W));
         }
     }
 }

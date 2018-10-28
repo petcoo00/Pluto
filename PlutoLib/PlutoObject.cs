@@ -7,7 +7,7 @@ namespace PlutoLib
     public class PlutoObject
     {
         private Planet _planet = null;
-        private Position _position;
+        protected Position _position;
 
         public PlutoObject(Position initialPosition)
         {
