@@ -11,8 +11,19 @@ namespace PlutoLib
 
         public MovementReport ProcessCommands(List<PlutoCommand> commands)
         {
+            MovementReport report = null;
 
-            return null;
+            foreach (var command in commands)
+            {
+                report = ProcessCommand(command);
+
+                if (!report.Success)
+                {
+                    break;
+                }
+            }
+
+            return report;
         }
 
         public MovementReport ProcessCommand(PlutoCommand command)
