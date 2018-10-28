@@ -12,5 +12,15 @@ namespace PlutoLib
             _planet = planet;
             _position = new Position(initialPosition);
         }
+
+        public void ProcessCommand(PlutoCommand command)
+        {
+
+        }
+
+        public Position GetPosition()
+        {
+            return new Position(_position);
+        }
     }
 }

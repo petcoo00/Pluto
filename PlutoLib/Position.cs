@@ -12,6 +12,14 @@ namespace PlutoLib
         W
     }
 
+    public enum PlutoCommand
+    {
+        F,
+        B,
+        L,
+        R
+    }
+
     public class Position
     {
         int X { get; set; }
