@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PlutoLib;
 
 namespace Pluto.Tests
 {
     [TestClass]
-    public class ForwardTests
+    public class MovementTests
     {
         [TestMethod]
         public void ReceiveCommand_Forward_FaceNorth()
@@ -54,6 +55,22 @@ namespace Pluto.Tests
             rover.ProcessCommand(PlutoCommand.B);
             Assert.AreEqual(rover.GetPosition(), new Position(4, 4, Orientation.W));
         }
-    }
 
+        [TestMethod]
+        public void ReceiveCommand_MultipleCommands()
+        {
+            Planet planet = new Planet();
+            PlutoRover rover = new PlutoRover(new Position(4, 4, Orientation.N));
+            planet.AddObject(rover);
+            var commands = new List<PlutoCommand>() {
+                PlutoCommand.F,
+                PlutoCommand.F,
+                PlutoCommand.R,
+                PlutoCommand.F,
+                PlutoCommand.F };
+            MovementReport report = rover.ProcessCommands( commands );
+            Assert.AreEqual(rover.GetPosition(), new Position(6, 6, Orientation.E));
+            Assert.IsTrue(report.Success);
+        }
+    }
 }

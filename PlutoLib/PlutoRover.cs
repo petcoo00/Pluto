@@ -9,7 +9,13 @@ namespace PlutoLib
         {
         }
 
-        public bool ProcessCommand(PlutoCommand command)
+        public MovementReport ProcessCommands(List<PlutoCommand> commands)
+        {
+
+            return null;
+        }
+
+        public MovementReport ProcessCommand(PlutoCommand command)
         {
             Position proposed = this.GetPosition().HandleCommand(command);
             proposed = _planet.Wrap(proposed);
@@ -19,10 +25,12 @@ namespace PlutoLib
                 (1 == obstructions.Count && object.ReferenceEquals(obstructions[0], this)))
             {
                 this._position = proposed;
-                return true;
+                return new MovementReport(true, null);
             }
-
-            return false;
+            else
+            {
+                return new MovementReport(false, obstructions);
+            }
         }
     }
 }
