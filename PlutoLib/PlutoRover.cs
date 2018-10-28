@@ -2,7 +2,7 @@
 
 namespace PlutoLib
 {
-    public class PlutoRover
+    public class PlutoRover: PlutoObject
     {
         private Planet _planet;
         private Position _position;
