@@ -78,5 +78,45 @@ namespace Pluto.Tests
             rover.ProcessCommand(PlutoCommand.B);
             Assert.AreEqual(rover.GetPosition(), new Position(4, 4, Orientation.W));
         }
+
+        [TestMethod]
+        public void ReceiveCommand_MoveOffGrid_North()
+        {
+            Planet planet = new Planet(10, 10);
+            PlutoRover rover = new PlutoRover(new Position(3, 9, Orientation.W));
+            planet.AddObject(rover);
+            rover.ProcessCommand(PlutoCommand.F);
+            Assert.AreEqual(rover.GetPosition(), new Position(3, 0, Orientation.W));
+        }
+
+        [TestMethod]
+        public void ReceiveCommand_MoveOffGrid_East()
+        {
+            Planet planet = new Planet(10, 10);
+            PlutoRover rover = new PlutoRover(new Position(9, 3, Orientation.W));
+            planet.AddObject(rover);
+            rover.ProcessCommand(PlutoCommand.F);
+            Assert.AreEqual(rover.GetPosition(), new Position(0, 3, Orientation.W));
+        }
+
+        [TestMethod]
+        public void ReceiveCommand_MoveOffGrid_South()
+        {
+            Planet planet = new Planet(10, 10);
+            PlutoRover rover = new PlutoRover(new Position(3, 0, Orientation.W));
+            planet.AddObject(rover);
+            rover.ProcessCommand(PlutoCommand.F);
+            Assert.AreEqual(rover.GetPosition(), new Position(3, 9, Orientation.W));
+        }
+
+        [TestMethod]
+        public void ReceiveCommand_MoveOffGrid_West()
+        {
+            Planet planet = new Planet(10, 10);
+            PlutoRover rover = new PlutoRover(new Position(0, 3, Orientation.W));
+            planet.AddObject(rover);
+            rover.ProcessCommand(PlutoCommand.F);
+            Assert.AreEqual(rover.GetPosition(), new Position(9, 3, Orientation.W));
+        }
     }
 }

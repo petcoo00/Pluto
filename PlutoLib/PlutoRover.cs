@@ -11,6 +11,9 @@ namespace PlutoLib
         public void ProcessCommand(PlutoCommand command)
         {
             Position proposed = this.GetPosition().HandleCommand(command);
+
+
+
             this._position = proposed;
         }
     }
