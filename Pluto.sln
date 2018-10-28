@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pluto", "Pluto\Pluto.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pluto.Tests", "Pluto.Tests\Pluto.Tests.csproj", "{FCDF4704-8E04-45EA-896E-1DC93F142029}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlutoLib", "PlutoLib\PlutoLib.csproj", "{F4D198D6-93FC-4B1D-8643-C54DE33E974E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{FCDF4704-8E04-45EA-896E-1DC93F142029}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCDF4704-8E04-45EA-896E-1DC93F142029}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCDF4704-8E04-45EA-896E-1DC93F142029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4D198D6-93FC-4B1D-8643-C54DE33E974E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4D198D6-93FC-4B1D-8643-C54DE33E974E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4D198D6-93FC-4B1D-8643-C54DE33E974E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4D198D6-93FC-4B1D-8643-C54DE33E974E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
