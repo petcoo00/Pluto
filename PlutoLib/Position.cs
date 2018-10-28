@@ -22,9 +22,9 @@ namespace PlutoLib
 
     public class Position
     {
-        int X { get; set; }
-        int Y { get; set; }
-        Orientation O { get; set; }
+        public int X { get; private set; }
+        public int Y { get; private set; }
+        public Orientation O { get; private set; }
 
         public static bool operator ==(Position obj1, Position obj2)
         {

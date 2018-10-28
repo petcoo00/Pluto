@@ -24,5 +24,38 @@ namespace PlutoLib
                 _objects.Add(obj);
             }
         }
+
+        public Position Wrap(Position p)
+        {
+            if (p.X >= 0 && p.Y >= 0 && p.X < _maxX && p.Y < _maxY)
+            {
+                return p;
+            }
+            else
+            {
+                int correctX = p.X;
+                int correctY = p.Y;
+
+                if (p.X < 0)
+                {
+                    correctX = _maxX + p.X;
+                }
+                else if (p.X >= _maxX)
+                {
+                    correctX = p.X - _maxX;
+                }
+
+                if (p.Y < 0)
+                {
+                    correctY = _maxY + p.Y;
+                }
+                else if (p.Y >= _maxY)
+                {
+                    correctY = p.Y - _maxY;
+                }
+
+                return new Position(correctX, correctY, p.O);
+            }
+        }
     }
 }
