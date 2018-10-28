@@ -8,9 +8,9 @@ namespace PlutoLib
     {
         private int _maxX;
         private int _maxY;
-        private List<PlutoObject> _objects;
+        private List<PlutoObject> _objects = new List<PlutoObject>();
 
-        public Planet(int maxX, int maxY)
+        public Planet(int maxX = 10, int maxY = 10)
         {
             _maxX = maxX;
             _maxY = maxY;
@@ -20,6 +20,7 @@ namespace PlutoLib
         {
             if (!_objects.Contains(obj))
             {
+                obj.SetPlanet(this);
                 _objects.Add(obj);
             }
         }
