@@ -61,6 +61,11 @@ namespace PlutoLib
             return base.Equals(obj);
         }
 
+        public bool CoordsMatch(Position p)
+        {
+            return X == p.X && Y == p.Y;
+        }
+
         public Position(Position p)
         {
             X = p.X;

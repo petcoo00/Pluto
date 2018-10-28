@@ -16,6 +16,22 @@ namespace PlutoLib
             _maxY = maxY;
         }
 
+        public List<PlutoObject> ObjectsAt(Position p)
+        {
+            List<PlutoObject> objs = new List<PlutoObject>();
+
+            foreach (var obj in _objects)
+            {
+
+                if (obj.GetPosition().CoordsMatch(p))
+                {
+                    objs.Add(obj);
+                }
+            }
+
+            return objs;
+        }
+
         public void AddObject(PlutoObject obj)
         {
             if (!_objects.Contains(obj))
